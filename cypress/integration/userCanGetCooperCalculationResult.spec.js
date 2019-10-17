@@ -1,5 +1,5 @@
 describe('Cooper Client calculates successfully', () => {
-  before(function() {
+  before(() => {
     cy.visit('http://localhost:3001');
     cy.get('input[id="distance"]').type('1000')
     cy.get('select[id="gender"]').select('female')
@@ -22,3 +22,14 @@ describe('Cooper Client calculates successfully', () => {
     cy.contains('Result: Poor')
   })
 })
+
+// describe('BMI Converter', () => {
+//   before(function() {
+//       cy.visit('http://localhost:3000');
+//   })
+
+//   beforeEach(function() {
+//       // Reload the application between tests to reset state
+//       cy.reload();
+//   })
+// })
