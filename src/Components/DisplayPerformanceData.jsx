@@ -14,12 +14,12 @@ class DisplayPerformanceData extends Component {
 
   async getPerformanceData() {
     let result = await getData()
-    this.setState({performanceData: result.data.entries}, () => {
+    this.setState({ performanceData: result.data.entries }, () => {
       this.props.indexUpdated()
     })
   }
 
-  render () {
+  render() {
     let dataIndex
 
     if (this.props.updateIndex === true) {
@@ -40,6 +40,6 @@ class DisplayPerformanceData extends Component {
         {dataIndex}
       </div>
     )
-  }      
+  }
 }
-  export default DisplayPerformanceData
+export default DisplayPerformanceData

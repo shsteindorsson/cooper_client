@@ -33,9 +33,9 @@ class App extends Component {
   async onLogin(e) {
     e.preventDefault()
     let resp = await authenticate(this.state.email, this.state.password)
-    
-    resp.authenticated === true ? this.setState({ authenticated: true }) 
-    : this.setState({ message: resp.message, renderLoginForm: false })
+
+    resp.authenticated === true ? this.setState({ authenticated: true })
+      : this.setState({ message: resp.message, renderLoginForm: false })
   }
 
   entryHandler() {
@@ -43,13 +43,11 @@ class App extends Component {
   }
 
   indexUpdated() {
-  this.setState({ updateIndex: false })
+    this.setState({ updateIndex: false })
   }
-  
+
   render() {
-    let renderLogin
-    let user
-    let performanceDataIndex
+    let renderLogin, user, performanceDataIndex
 
     if (this.state.authenticated === true) {
       user = JSON.parse(sessionStorage.getItem('credentials')).uid
@@ -57,8 +55,8 @@ class App extends Component {
         <p>Hi {user}</p>
       )
       performanceDataIndex = (
-        <button id="show-index" 
-        onClick={() => this.setState({ renderIndex: true })}>
+        <button id="show-index"
+          onClick={() => this.setState({ renderIndex: true })}>
           Show past entries
         </button>
       )
@@ -66,7 +64,7 @@ class App extends Component {
       if (this.state.renderLoginForm === true) {
         renderLogin = (
           <>
-            <LoginForm 
+            <LoginForm
               loginHandler={this.onLogin.bind(this)}
               inputChangeHandler={this.onChange.bind(this)}
             />
@@ -75,11 +73,11 @@ class App extends Component {
       } else {
         renderLogin = (
           <>
-            <button id="login" 
-            onClick={() => this.setState({ renderLoginForm: true })}>
+            <button id="login"
+              onClick={() => this.setState({ renderLoginForm: true })}>
               Login
             </button>
-            
+
             <p>{this.state.message}</p>
           </>
         )
@@ -93,16 +91,16 @@ class App extends Component {
             updateIndex={this.state.updateIndex}
             indexUpdated={this.indexUpdated.bind(this)}
           />
-          <button 
-          onClick={() => this.setState({ renderIndex: false })}>
+          <button
+            onClick={() => this.setState({ renderIndex: false })}>
             Hide past entries
           </button>
         </>
       )
     } else {
       performanceDataIndex = (
-        <button id="show-index" 
-        onClick={() => this.setState({ renderIndex: true })}>
+        <button id="show-index"
+          onClick={() => this.setState({ renderIndex: true })}>
           Show past entries
         </button>
       )
@@ -110,7 +108,7 @@ class App extends Component {
 
     return (
       <div>
-        <InputFields 
+        <InputFields
           inputChangeHandler={this.onChange.bind(this)}
         />
 
