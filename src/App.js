@@ -29,7 +29,10 @@ class App extends Component {
 
     if (this.state.renderLoginForm === true) {
       renderLogin = (
-        <LoginForm />
+        <LoginForm 
+        loginHandler={this.onLogin.bind(this)}
+        inputChangeHandler={this.onChange.bind(this)}
+        />
       )
     } else {
       renderLogin = (
@@ -40,13 +43,13 @@ class App extends Component {
       )
     }
 
-  async function onLogin(e) {
-    e.preventDefault();
-    let resp = await authenticate(this.state.email, this.state.password)
-    
-
-    resp.authenticated === true ? this.setState({ authenticated: true }) : this.setState({ message: resp.message, renderLoginForm: false })
-  }
+    async function onLogin(e) {
+      e.preventDefault();
+      let resp = await authenticate(this.state.email, this.state.password)
+      
+      resp.authenticated === true ? this.setState({ authenticated: true }) 
+      : this.setState({ message: resp.message, renderLoginForm: false })
+    }
 
     return (
       <div>
