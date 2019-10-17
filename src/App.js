@@ -17,7 +17,8 @@ class App extends Component {
       email: '',
       password: '',
       message: '',
-      entrySaved: false
+      entrySaved: false,
+      renderIndex: false
     }
   }
 
@@ -43,11 +44,18 @@ class App extends Component {
   render() {
     let renderLogin
     let user
+    let performanceDataIndex
 
     if (this.state.authenticated === true) {
-      user = JSON.parse(sessionStorage.getItem('credentials')).uid;
+      user = JSON.parse(sessionStorage.getItem('credentials')).uid
       renderLogin = (
         <p>Hi {user}</p>
+      )
+      performanceDataIndex = (
+        <button id="show-index" 
+        onClick={() => this.setState({ renderIndex: true })}>
+          Show past entries
+        </button>
       )
     } else {
       if (this.state.renderLoginForm === true) {
@@ -87,7 +95,7 @@ class App extends Component {
           entrySaved={this.state.entrySaved}
           entryHandler={this.entryHandler.bind(this)}
         />
-
+        {performanceDataIndex}
         {renderLogin}
       </div>
     );
