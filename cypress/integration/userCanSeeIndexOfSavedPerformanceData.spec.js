@@ -1,7 +1,7 @@
 describe('User attempts to view his/her performance data', () => {
 
   before(() => {
-    cy.visit('http://localhost:3001');
+    cy.visit('http://localhost:3001')
     cy.server()
     cy.route({
       method: 'GET',
@@ -22,7 +22,7 @@ describe('User attempts to view his/her performance data', () => {
       cy.get('#password').type('password')
       cy.get('button').click()
     })
-  });
+  })
 
   it('successfully', async () => {
     cy.get('button[id="show-index"]').click()
@@ -30,4 +30,4 @@ describe('User attempts to view his/her performance data', () => {
     cy.contains('Average')
     cy.contains('Above Average')
   })
-}
+})
