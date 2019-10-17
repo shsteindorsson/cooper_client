@@ -1,7 +1,13 @@
 describe('User attempts save data', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost:3001');
+    cy.visit('http://localhost:3001')
+    cy.server()
+    cy.route({
+      method: 'POST',
+      url: 'http://localhost:3000/api/v1/performance_data',
+      response: 'fixture:saving_entry_response.json'
+    })
     cy.route({
       method: 'POST',
       url: 'http://localhost:3000/api/v1/auth/sign_in',
@@ -10,7 +16,7 @@ describe('User attempts save data', () => {
         "uid": "user@mail.com"
       }
     })
-    cy.get('#login').click();
+    cy.get('#login').click()
     cy.get('#login-form').within(() => {
       cy.get('#email').type('user@mail.com')
       cy.get('#password').type('password')
