@@ -9,7 +9,8 @@ class App extends Component {
     this.state = {
       distance: '',
       gender: 'female',
-      age: ''
+      age: '',
+      renderloginForm: false
     }
   }
 
@@ -20,20 +21,33 @@ class App extends Component {
   }
 
   render() {
+    let renderLogin
+
+    if (this.state.renderLoginForm === true) {
+      renderLogin = (
+        <LoginForm />
+      )
+    } else {
+      renderLogin = (
+        <button id="login" 
+        onClick={() => this.setState({ renderLoginForm: true })}>
+          Login
+        </button>
+      )
+    }
     return (
       <div>
         <InputFields 
         inputChangeHandler={this.onChange.bind(this)}
         />
 
-        <button id="login">Login</button>
-        <LoginForm />
-
         <DisplayCooperResult
           distance={this.state.distance}
           gender={this.state.gender}
           age={this.state.age}
         />
+
+        {renderLogin}
       </div>
     );
   }
