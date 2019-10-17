@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   async onLogin(e) {
-    e.preventDefault();
+    e.preventDefault()
     let resp = await authenticate(this.state.email, this.state.password)
     
     resp.authenticated === true ? this.setState({ authenticated: true }) 
@@ -39,11 +39,11 @@ class App extends Component {
   }
 
   entryHandler() {
-    this.setState({ entrySaved: true, updateIndex: true });
+    this.setState({ entrySaved: true, updateIndex: true })
   }
 
   indexUpdated() {
-  this.setState({ updateIndex: false });
+  this.setState({ updateIndex: false })
   }
   
   render() {
