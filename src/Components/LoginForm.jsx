@@ -2,7 +2,7 @@ import React from 'react'
 
 const LoginForm = () => {
   return (
-    <form>
+    <form id="login-form">
       <div>
         <label >Email</label>
         <input id="email"></input>

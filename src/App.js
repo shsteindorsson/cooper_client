@@ -10,7 +10,11 @@ class App extends Component {
       distance: '',
       gender: 'female',
       age: '',
-      renderloginForm: false
+      renderloginForm: false,
+      authenticated: false,
+      email: '',
+      password: '',
+      message: ''
     }
   }
 
@@ -35,6 +39,15 @@ class App extends Component {
         </button>
       )
     }
+
+  async function onLogin(e) {
+    e.preventDefault();
+    let resp = await authenticate(this.state.email, this.state.password)
+    
+
+    resp.authenticated === true ? this.setState({ authenticated: true }) : this.setState({ message: resp.message, renderLoginForm: false })
+  }
+
     return (
       <div>
         <InputFields 
