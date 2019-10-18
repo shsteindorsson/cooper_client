@@ -4,6 +4,7 @@ import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
 import { authenticate } from './Modules/Auth'
 import DisplayPerformanceData from './Components/DisplayPerformanceData'
+import BMICalculator from './Components/BMICalculator.jsx'
 
 
 class App extends Component {
@@ -122,6 +123,8 @@ class App extends Component {
         />
         {performanceDataIndex}
         {renderLogin}
+
+        <BMICalculator />
       </div>
     );
   }
