@@ -21,6 +21,8 @@ class BMICalculator extends Component {
   render() {
     let currentMethod = this.state.method
     return (
+      <>
+      <h1>BMI Calculator</h1>
       <div>
         <MethodSelect
           onChangeValue={this.onChangeValue}
@@ -53,6 +55,7 @@ class BMICalculator extends Component {
           height={this.state.height}
         />
       </div>
+      </>
     )
   }
 }
