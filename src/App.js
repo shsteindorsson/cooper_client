@@ -4,8 +4,8 @@ import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
 import { authenticate } from './Modules/Auth'
 import DisplayPerformanceData from './Components/DisplayPerformanceData'
-import BMICalculator from './Components/BMICalculator.jsx'
-
+import BMICalculator from './Components/BMICalculator'
+import TestComponent from './Components/TestComponent'
 
 class App extends Component {
   constructor(props) {
@@ -125,6 +125,8 @@ class App extends Component {
         {renderLogin}
 
         <BMICalculator />
+
+        <TestComponent />
       </div>
     );
   }

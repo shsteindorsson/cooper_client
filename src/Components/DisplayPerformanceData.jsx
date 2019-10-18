@@ -18,7 +18,7 @@ class DisplayPerformanceData extends Component {
       this.props.indexUpdated()
     })
   }
-
+  
   render() {
     let dataIndex
 

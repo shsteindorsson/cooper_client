@@ -11,7 +11,7 @@ const saveData = async (result) => {
     "Content-type": "application/json",
     Accept: "application/json"
   }
-
+  debugger
   const path = apiUrl + '/performance_data'
   return new Promise((resolve, reject) => {
     axios.post(path, {
