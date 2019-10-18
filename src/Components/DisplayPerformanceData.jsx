@@ -14,7 +14,7 @@ class DisplayPerformanceData extends Component {
 
   async getPerformanceData() {
     let result = await getData()
-    this.setState({ performanceData: result.data.entries }, () => {
+    this.setState({ performanceData: result.data.entries }, () => { 
       this.props.indexUpdated()
     })
   }
