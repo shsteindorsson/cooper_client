@@ -79,7 +79,7 @@ const Chart = (props) => {
 
 	return (
 		<div>
-			<Header size='large'>My Cooper Data Results</Header>
+			<Header size='large' textAlign='center'>My Cooper Data Results</Header>
 			<Doughnut
 				data={data}
 				width={100}

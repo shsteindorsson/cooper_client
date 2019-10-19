@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
+import { Container } from 'semantic-ui-react'
 import DisplayCooperResult from './Components/DisplayCooperResult'
 import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
 import { authenticate } from './Modules/Auth'
 import DisplayPerformanceData from './Components/DisplayPerformanceData'
 import BMICalculator from './Components/BMICalculator'
+import Footer from './Components/Footer'
 
 class App extends Component {
   constructor(props) {
@@ -108,6 +110,8 @@ class App extends Component {
 
     return (
       <div>
+        <div className="app-container">
+        <h1>Cooper Calculator</h1>
         <InputFields
           inputChangeHandler={this.onChange.bind(this)}
         />
@@ -122,8 +126,11 @@ class App extends Component {
         />
         {performanceDataIndex}
         {renderLogin}
-
+        </div>
+        <div className="spacious">
         <BMICalculator />
+        </div>
+        <Footer />
       </div>
     );
   }
