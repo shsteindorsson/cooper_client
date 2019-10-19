@@ -3,7 +3,7 @@ import { storeAuthCredentials } from './Auth'
 
 const apiUrl = 'http://localhost:3000/api/v1'
 
-const saveData = async (result, distanceResult) => {
+const saveData = async (result) => {
   let headers = await sessionStorage.getItem("credentials")
   headers = JSON.parse(headers)
   headers = {
@@ -16,10 +16,7 @@ const saveData = async (result, distanceResult) => {
   return new Promise((resolve, reject) => {
     axios.post(path, {
       performance_data: { 
-        data: { 
-        message: result,
-        distance: distanceResult
-      }}
+        data: { message: result }}
     }, {
       headers: headers
     })

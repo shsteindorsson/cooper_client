@@ -7,8 +7,8 @@ class DisplayPerformanceData extends Component {
     super(props)
     this.state = {
       performanceData: null
-     // distanceData: null
     }
+    let someHash = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
   }
 
   componentDidMount() {
@@ -19,27 +19,37 @@ class DisplayPerformanceData extends Component {
     let result = await getData()
     this.setState({ 
       performanceData: result.data.entries,
-      distanceData: result.data.entries
     }, () => { 
       this.props.indexUpdated()
     })
   }
-
-  // async getUserDistances() {
-  //   let result = await getData()
-  //   let dataEntries = result.data.entries
-  //   let distances = []
-  //   dataEntries.forEach(dist => {distances.push(dist.data.message.split(' ')[0])})
-  //   return distances
-  // }
   
   render() {
     let dataIndex
-    //let distanceIndex
+
+    const extractThings = (arg) => {
+      debugger
+      arg.forEach(f => {
+        if(f.data.message === "Poor") {
+          this.someHash["po"]++ 
+        }
+        if(f.data.message === "Excellent") {
+          this.someHash["ex"]++ 
+        }
+        if(f.data.message === "Above average") {
+          this.someHash["ab"]++ 
+        }
+        if(f.data.message === "Below average") {
+          this.someHash["be"]++ 
+        }
+        if(f.data.message === "Average") {
+          this.someHash["av"]++ 
+        }
+      })
+    }
 
     if (this.props.updateIndex === true) {
       this.getPerformanceData()
-    //  this.getUserDistances()
     }
     if (this.state.performanceData != null) {
       dataIndex = (
@@ -47,30 +57,22 @@ class DisplayPerformanceData extends Component {
           {this.state.performanceData.map(item => {
             return <div key={item.id}>{item.data.message}</div>
           })}
+          extractThings({this.state.performanceData})
         </div>
       )
-      debugger
     }
 
-    const getMessageCount = (label) => {
-      let msgCount = 0
-      let msgIndex = dataIndex.props.children
-      msgIndex.forEach(msg => {
-        if (msg.props.children === label){
-          msgCount++
-        } 
-      })
-      return msgCount
-    }
-
-    // if (this.state.distanceData != null) {
-    //   distanceIndex = (
-    //     <div>
-    //       {this.state.performanceData.map(item => {
-    //         return <div key={item.id}>{item.data.distance}</div>
-    //       })}
-    //     </div>
-    //   )
+    // const getMessageCount = (label) => {
+    //   let msgCount = 0
+    //   debugger;
+    //   let msgIndex = dataIndex
+    //   debugger;
+    //   msgIndex.forEach(msg => {
+    //     if (msg.props.children === label){
+    //       msgCount++
+    //     } 
+    //   })
+    //   return msgCount
     // }
 
     const data = {
@@ -82,8 +84,7 @@ class DisplayPerformanceData extends Component {
         'Poor'
       ],
       datasets: [{
-        //data: [30, 5, 10, 20, 12],
-        data: [getMessageCount('Poor'), getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
+        // data: [getMessageCount('Poor'), getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
         backgroundColor: [
         '#3b9977',
         '#994b3b',
@@ -106,7 +107,6 @@ class DisplayPerformanceData extends Component {
         <h2>Doughnut Example</h2>
         <Doughnut data={data} />
         {dataIndex}
-        {/* {distanceIndex} */}
       </div>
     )
   }
