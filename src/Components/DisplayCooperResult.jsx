@@ -5,13 +5,14 @@ import { saveData } from '../Modules/PerformanceData'
 class DisplayCooperResult extends Component {
 
   calculate() {
-    return CooperCalculator(this.props.distance, this.props.gender, this.props.age);
+    return CooperCalculator(this.props.distance, this.props.gender, this.props.age)
   }
 
   async saveCooperData() {
-    const result = `${this.props.distance} ${this.calculate()}`
+    const result = this.calculate()
+    const distanceResult = this.props.distance
     try {
-      await saveData(result)
+      await saveData(result, distanceResult)
       this.props.entryHandler()
     } catch (error) {
       console.log(error)
