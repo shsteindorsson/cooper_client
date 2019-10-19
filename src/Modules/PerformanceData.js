@@ -14,12 +14,11 @@ const saveData = async (result, distanceResult) => {
 
   const path = apiUrl + '/performance_data'
   return new Promise((resolve, reject) => {
-    debugger;
     axios.post(path, {
       performance_data: { 
         data: { 
-        message: result, 
-        distance: distanceResult 
+        message: result,
+        distance: distanceResult
       }}
     }, {
       headers: headers
