@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getData } from '../Modules/PerformanceData'
+import LineChart from './LineChart'
 
 class DisplayPerformanceData extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class DisplayPerformanceData extends Component {
       dataIndex = (
         <div>
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message}{item.data.distance}</div>
+            return <div key={item.id}>{item.data.message} {item.data.distance}</div>
           })}
         </div>
       )
@@ -37,6 +38,7 @@ class DisplayPerformanceData extends Component {
 
     return (
       <div>
+        <LineChart entries={this.state.performanceData}/>
         {dataIndex}
       </div>
     )

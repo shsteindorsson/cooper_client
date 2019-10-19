@@ -1,10 +1,22 @@
 import React from 'react';
-import {Line} from 'react-chartjs-2'; //import Line module from react-chart-js-2
+import { Line } from 'react-chartjs-2'; //import Line module from react-chart-js-2
 
-const mydata = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+const LineChart = (props) => {
+  debugger;
+  const getLabels = (collection) => {
+    let labels = []
+    collection.forEach(entry => {
+      if (entry.data.message && labels.indexOf(entry.data.message) === -1) {
+        labels.push(entry.data.message)
+      }
+    })
+    return labels
+  }
+
+  const mydata = {
+    labels: getLabels(props.entries),
     datasets: [
-        {
+      {
         label: 'My Cooper Challenge Results',
         fill: false,
         lineTension: 0.1,
@@ -24,17 +36,15 @@ const mydata = {
         pointRadius: 1,
         pointHitRadius: 10,
         data: [65, 59, 80, 81, 56, 55, 40]
-        }
+      }
     ]
-}
-
-const LineChart = () => {
-    return (
-      <div>
+  }
+  return (
+    <div>
       <h2>Line Chart Example</h2>
       <Line data={mydata} />
-      </div>
-    );
+    </div>
+  );
 }
 
 export default LineChart

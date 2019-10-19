@@ -5,7 +5,6 @@ import LoginForm from './Components/LoginForm'
 import { authenticate } from './Modules/Auth'
 import DisplayPerformanceData from './Components/DisplayPerformanceData'
 import BMICalculator from './Components/BMICalculator'
-import LineChart from './Components/LineChart'
 
 class App extends Component {
   constructor(props) {
@@ -125,8 +124,6 @@ class App extends Component {
         {renderLogin}
 
         <BMICalculator />
-
-        <LineChart />
       </div>
     );
   }
