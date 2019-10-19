@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getData } from '../Modules/PerformanceData'
-import {Doughnut} from 'react-chartjs-2'
+import Chart from './Chart'
 
 class DisplayPerformanceData extends Component {
   constructor(props) {
@@ -30,9 +30,7 @@ class DisplayPerformanceData extends Component {
     const extractThings = (arg) => {
       
       arg.forEach(f => {
-        debugger
         if(f.data.message === "Poor") {
-          debugger
           this.someHash["po"]++
           console.log("Poor") 
         }
@@ -67,52 +65,10 @@ class DisplayPerformanceData extends Component {
         </div>
       )
     }
-    
-    // const getMessageCount = (label) => {
-    //   let msgCount = 0
-    //   debugger;
-    //   let msgIndex = dataIndex
-    //   debugger;
-    //   msgIndex.forEach(msg => {
-    //     if (msg.props.children === label){
-    //       msgCount++
-    //     } 
-    //   })
-    //   return msgCount
-    // }
-
-    const data = {
-      labels: [
-        'Excellent',
-        'Above average',
-        'Average',
-        'Below average',
-        'Poor'
-      ],
-      datasets: [{
-        //data: [this.someHash[""], getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
-        backgroundColor: [
-        '#3b9977',
-        '#994b3b',
-        '#997a3b',
-        '#593b99',
-        '#995372'
-        ],
-        hoverBackgroundColor: [
-        '#2ad1a4',
-        '#e0512d',
-        '#d4a026',
-        '#a28abd',
-        '#e02d74'
-        ]
-      }]
-    };
-    
+    debugger;
     return (
       <div>
-        <h2>Doughnut Example</h2>
-        <Doughnut data={data} />
-        {dataIndex}
+        <Chart listNameFromParent={dataIndex} />
       </div>
     )
   }
