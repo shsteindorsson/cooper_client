@@ -1,54 +1,60 @@
 import React, { Component } from 'react'
 import { getData } from '../Modules/PerformanceData'
-import { Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2'
 
 class DisplayPerformanceData extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      performanceData: null
+      performanceData: null,
+      distanceData: null
     }
   }
+
   componentDidMount() {
     this.getPerformanceData()
   }
   
   async getPerformanceData() {
     let result = await getData()
-    debugger
-    this.setState({ performanceData: result.data.entries }, () => { 
+    this.setState({ 
+      performanceData: result.data.entries,
+      distanceData: result.data.entries
+    }, () => { 
       this.props.indexUpdated()
     })
   }
 
-  async getUserDistances() {
-    let result = await getData()
-    let dataEntries = result.data.entries
-    let distances = []
-    dataEntries.forEach(dist => {distances.push(dist.data.message.split(' ')[0])})
-    return distances
-  }
+  // async getUserDistances() {
+  //   let result = await getData()
+  //   let dataEntries = result.data.entries
+  //   let distances = []
+  //   dataEntries.forEach(dist => {distances.push(dist.data.message.split(' ')[0])})
+  //   return distances
+  // }
   
   render() {
     let dataIndex
-
-    // const getUserDistances = () => {
-    //   let dataPoints = this.state.performanceData
-    //   debugger
-    //   return dataPoints.data.distance
-
-    // }
+    let distanceIndex
 
     if (this.props.updateIndex === true) {
       this.getPerformanceData()
-     // this.getUserDistances()
+    //  this.getUserDistances()
     }
     if (this.state.performanceData != null) {
-      debugger
       dataIndex = (
         <div>
           {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message} {item.data.distance}</div>
+            return <div key={item.id}>{item.data.message}</div>
+          })}
+        </div>
+      )
+    }
+    if (this.state.distanceData != null) {
+      distanceIndex = (
+        <div>
+          {this.state.performanceData.map(item => {
+            return <div key={item.id}>{item.data.distance}</div>
           })}
         </div>
       )
@@ -77,7 +83,7 @@ class DisplayPerformanceData extends Component {
           pointHoverBorderWidth: 2,
           pointRadius: 1,
           pointHitRadius: 10,
-          data: this.getUserDistances()//[65, 59, 80, 81, 56, 55, 40]
+          // data: this.getUserDistances()//[65, 59, 80, 81, 56, 55, 40]
         }
       ]
     }
@@ -87,6 +93,7 @@ class DisplayPerformanceData extends Component {
         <h2>Line Chart Example</h2>
         <Line data={mydata} />
         {dataIndex}
+        {distanceIndex}
       </div>
     )
   }
