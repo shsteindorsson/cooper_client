@@ -8,7 +8,7 @@ class DisplayPerformanceData extends Component {
     this.state = {
       performanceData: null
     }
-    let someHash = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
+    this.someHash = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
   }
 
   componentDidMount() {
@@ -28,26 +28,32 @@ class DisplayPerformanceData extends Component {
     let dataIndex
 
     const extractThings = (arg) => {
-      debugger
+      
       arg.forEach(f => {
+        debugger
         if(f.data.message === "Poor") {
-          this.someHash["po"]++ 
+          debugger
+          this.someHash["po"]++
+          console.log("Poor") 
         }
-        if(f.data.message === "Excellent") {
-          this.someHash["ex"]++ 
+        else if(f.data.message === "Excellent") {
+          this.someHash["ex"]++
+          console.log("Excellent") 
         }
-        if(f.data.message === "Above average") {
-          this.someHash["ab"]++ 
-        }
-        if(f.data.message === "Below average") {
-          this.someHash["be"]++ 
-        }
-        if(f.data.message === "Average") {
+        else if(f.data.message === "Average") {
           this.someHash["av"]++ 
+          console.log("Average")
+        }
+        else if(f.data.message === "Above average") {
+          this.someHash["ab"]++
+          console.log("Above average") 
+        }
+        else if(f.data.message === "Below average") {
+          this.someHash["be"]++ 
+          console.log("Below average")
         }
       })
     }
-
     if (this.props.updateIndex === true) {
       this.getPerformanceData()
     }
@@ -57,11 +63,11 @@ class DisplayPerformanceData extends Component {
           {this.state.performanceData.map(item => {
             return <div key={item.id}>{item.data.message}</div>
           })}
-          extractThings({this.state.performanceData})
+          {extractThings(this.state.performanceData)}
         </div>
       )
     }
-
+    
     // const getMessageCount = (label) => {
     //   let msgCount = 0
     //   debugger;
@@ -84,7 +90,7 @@ class DisplayPerformanceData extends Component {
         'Poor'
       ],
       datasets: [{
-        // data: [getMessageCount('Poor'), getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
+        //data: [this.someHash[""], getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
         backgroundColor: [
         '#3b9977',
         '#994b3b',
@@ -101,7 +107,7 @@ class DisplayPerformanceData extends Component {
         ]
       }]
     };
-
+    
     return (
       <div>
         <h2>Doughnut Example</h2>
