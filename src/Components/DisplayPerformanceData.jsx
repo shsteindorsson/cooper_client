@@ -28,11 +28,10 @@ class DisplayPerformanceData extends Component {
     let dataIndex
 
     const extractThings = (arg) => {
-      
+      this.someHash = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
       arg.forEach(f => {
         debugger
         if(f.data.message === "Poor") {
-          debugger
           this.someHash["po"]++
           console.log("Poor") 
         }
@@ -44,11 +43,11 @@ class DisplayPerformanceData extends Component {
           this.someHash["av"]++ 
           console.log("Average")
         }
-        else if(f.data.message === "Above average") {
+        else if(f.data.message === "Above Average") {
           this.someHash["ab"]++
           console.log("Above average") 
         }
-        else if(f.data.message === "Below average") {
+        else if(f.data.message === "Below Average") {
           this.someHash["be"]++ 
           console.log("Below average")
         }
@@ -84,13 +83,13 @@ class DisplayPerformanceData extends Component {
     const data = {
       labels: [
         'Excellent',
-        'Above average',
+        'Above Average',
         'Average',
-        'Below average',
+        'Below Average',
         'Poor'
       ],
       datasets: [{
-        //data: [this.someHash[""], getMessageCount('Below average'), getMessageCount('Poor'), getMessageCount('Poor'), getMessageCount('Poor')],
+        data: [this.someHash["ex"], this.someHash["ab"], this.someHash["av"], this.someHash["be"], this.someHash["po"]],
         backgroundColor: [
         '#3b9977',
         '#994b3b',
