@@ -126,7 +126,7 @@ class App extends Component {
 
         <BMICalculator />
 
-        <TestComponent />
+        <LineChart />
       </div>
     );
   }
