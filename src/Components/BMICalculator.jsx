@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import DisplayResult from './DisplayResult'
+import DisplayBMIResult from './DisplayBMIResult'
 import MethodSelect from './MethodSelect'
 
 class BMICalculator extends Component {
@@ -22,39 +22,39 @@ class BMICalculator extends Component {
     let currentMethod = this.state.method
     return (
       <>
-      <h1>BMI Calculator</h1>
-      <div>
-        <MethodSelect
-          onChangeValue={this.onChangeValue}
-        />
-
-        <div className="label-padding"></div>
+        <h1>BMI Calculator</h1>
         <div>
-          <label>Weight</label>
-          <input
-            id="weight"
-            placeholder={currentMethod === 'metric' ? ' in kilograms (kg)' : ' in pounds (lbs)'}
-            value={this.state.weight}
-            onChange={this.onChangeValue}
+          <MethodSelect
+            onChangeValue={this.onChangeValue}
+          />
+
+          <div className="label-padding"></div>
+          <div>
+            <label>Weight</label>
+            <input
+              id="weight"
+              placeholder={currentMethod === 'metric' ? ' in kilograms (kg)' : ' in pounds (lbs)'}
+              value={this.state.weight}
+              onChange={this.onChangeValue}
+            />
+          </div>
+
+          <div>
+            <label>Height</label>
+            <input
+              id="height"
+              placeholder={currentMethod === 'metric' ? ' in centimetres (cm)' : ' in inches (in)'}
+              value={this.state.height}
+              onChange={this.onChangeValue}
+            />
+          </div>
+
+          <DisplayBMIResult
+            method={this.state.method}
+            weight={this.state.weight}
+            height={this.state.height}
           />
         </div>
-
-        <div>
-          <label>Height</label>
-          <input
-            id="height"
-            placeholder={currentMethod === 'metric' ? ' in centimetres (cm)' : ' in inches (in)'}
-            value={this.state.height}
-            onChange={this.onChangeValue}
-          />
-        </div>
-
-        <DisplayResult
-          method={this.state.method}
-          weight={this.state.weight}
-          height={this.state.height}
-        />
-      </div>
       </>
     )
   }

@@ -1,36 +1,42 @@
 import React from 'react'
-import {Doughnut} from 'react-chartjs-2'
+import { Doughnut } from 'react-chartjs-2'
 
-let labelCounters = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
+let labelCounters = {
+	excellent: 0,
+	above: 0,
+	average: 0,
+	below: 0,
+	poor: 0
+}
 
 const Chart = (props) => {
-	
+
 	let message = props.message
-	debugger;
 
 	const extractMessages = (arg) => {
-		labelCounters = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
+		labelCounters = {
+			excellent: 0,
+			above: 0,
+			average: 0,
+			below: 0,
+			poor: 0
+		}
+
 		arg.forEach(msg => {
-			debugger
-			if(msg.data.message === "Poor") {
-				labelCounters["po"]++
-				console.log("Poor") 
+			if (msg.data.message === "Excellent") {
+				labelCounters["excellent"]++
 			}
-			else if(msg.data.message === "Excellent") {
-				labelCounters["ex"]++
-				console.log("Excellent") 
+			else if (msg.data.message === "Above Average") {
+				labelCounters["above"]++
 			}
-			else if(msg.data.message === "Average") {
-				labelCounters["av"]++ 
-				console.log("Average")
+			else if (msg.data.message === "Average") {
+				labelCounters["average"]++
 			}
-			else if(msg.data.message === "Above Average") {
-				labelCounters["ab"]++
-				console.log("Above average") 
+			else if (msg.data.message === "Below Average") {
+				labelCounters["below"]++
 			}
-			else if(msg.data.message === "Below Average") {
-				labelCounters["be"]++ 
-				console.log("Below average")
+			else if (msg.data.message === "Poor") {
+				labelCounters["poor"]++
 			}
 		})
 	}
@@ -44,28 +50,38 @@ const Chart = (props) => {
 			'Poor'
 		],
 		datasets: [{
-			data: [labelCounters["ex"], labelCounters["ab"], labelCounters["av"], labelCounters["be"], labelCounters["po"]],
+			data: [
+				labelCounters["excellent"],
+				labelCounters["above"],
+				labelCounters["average"],
+				labelCounters["below"],
+				labelCounters["poor"]
+			],
 			backgroundColor: [
-			'#FF6384',
-			'#36A2EB',
-			'#FFCE56'
+				'#3b9977',
+				'#994b3b',
+				'#997a3b',
+				'#593b99',
+				'#995372'
 			],
 			hoverBackgroundColor: [
-			'#FF6384',
-			'#36A2EB',
-			'#FFCE56'
+				'#2ad1a4',
+				'#e0512d',
+				'#d4a026',
+				'#a28abd',
+				'#e02d74'
 			]
 		}]
 	}
 
 	extractMessages(message)
 
-    return (
-      <div>
-        <h2>Doughnut Example</h2>
-        <Doughnut data={data} />
-      </div>
-    )
+	return (
+		<div>
+			<h2>My Cooper Data Results</h2>
+			<Doughnut data={data} />
+		</div>
+	)
 }
 
 export default Chart

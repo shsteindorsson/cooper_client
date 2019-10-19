@@ -13,16 +13,16 @@ class DisplayPerformanceData extends Component {
   componentDidMount() {
     this.getPerformanceData()
   }
-  
+
   async getPerformanceData() {
     let result = await getData()
-    this.setState({ 
+    this.setState({
       performanceData: result.data.entries,
-    }, () => { 
+    }, () => {
       this.props.indexUpdated()
     })
   }
-  
+
   render() {
     const messages = this.state.performanceData
     let dataIndex
@@ -36,7 +36,6 @@ class DisplayPerformanceData extends Component {
         debugger;
         return (
           <div key={msg.id}>
-            {/* <Chart message={messages} /> */}
             {msg.data.message}
           </div>
         )

@@ -26,8 +26,6 @@ describe('User attempts to view his/her performance data', () => {
 
   it('successfully', () => {
     cy.get('button[id="show-index"]').click()
-    cy.contains('Below Average')
-    cy.contains('Average')
-    cy.contains('Above Average')
+    cy.contains('My Cooper Data Results')
   })
 })
