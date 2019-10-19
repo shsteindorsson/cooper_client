@@ -33,7 +33,6 @@ class DisplayPerformanceData extends Component {
 
     if (messages !== []) {
       messages.forEach(msg => {
-        debugger;
         return (
           <div key={msg.id}>
             {msg.data.message}

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header } from 'semantic-ui-react'
 import { Doughnut } from 'react-chartjs-2'
 
 let labelCounters = {
@@ -78,7 +79,7 @@ const Chart = (props) => {
 
 	return (
 		<div>
-			<h2>My Cooper Data Results</h2>
+			<Header size='large'>My Cooper Data Results</Header>
 			<Doughnut
 				data={data}
 				width={100}

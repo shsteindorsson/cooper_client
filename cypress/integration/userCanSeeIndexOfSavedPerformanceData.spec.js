@@ -26,6 +26,7 @@ describe('User attempts to view his/her performance data', () => {
 
   it('successfully', () => {
     cy.get('button[id="show-index"]').click()
-    cy.contains('My Cooper Data Results')
+    cy.get('.ui.large.header')
+    cy.should('contain', 'My Cooper Data Results')
   })
 })
