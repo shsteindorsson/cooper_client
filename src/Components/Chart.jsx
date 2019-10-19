@@ -79,7 +79,12 @@ const Chart = (props) => {
 	return (
 		<div>
 			<h2>My Cooper Data Results</h2>
-			<Doughnut data={data} />
+			<Doughnut
+				data={data}
+				width={100}
+				height={90}
+				options={{ maintainAspectRatio: false }}
+			/>
 		</div>
 	)
 }
