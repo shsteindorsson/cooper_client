@@ -6,9 +6,8 @@ class DisplayPerformanceData extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      performanceData: null
+      performanceData: []
     }
-    this.someHash = {ex: 0, ab: 0, av: 0, be: 0, po: 0}
   }
 
   componentDidMount() {
@@ -25,50 +24,28 @@ class DisplayPerformanceData extends Component {
   }
   
   render() {
+    const messages = this.state.performanceData
     let dataIndex
 
-    const extractThings = (arg) => {
-      
-      arg.forEach(f => {
-        if(f.data.message === "Poor") {
-          this.someHash["po"]++
-          console.log("Poor") 
-        }
-        else if(f.data.message === "Excellent") {
-          this.someHash["ex"]++
-          console.log("Excellent") 
-        }
-        else if(f.data.message === "Average") {
-          this.someHash["av"]++ 
-          console.log("Average")
-        }
-        else if(f.data.message === "Above average") {
-          this.someHash["ab"]++
-          console.log("Above average") 
-        }
-        else if(f.data.message === "Below average") {
-          this.someHash["be"]++ 
-          console.log("Below average")
-        }
-      })
-    }
     if (this.props.updateIndex === true) {
       this.getPerformanceData()
     }
-    if (this.state.performanceData != null) {
-      dataIndex = (
-        <div>
-          {this.state.performanceData.map(item => {
-            return <div key={item.id}>{item.data.message}</div>
-          })}
-          {extractThings(this.state.performanceData)}
-        </div>
-      )
+
+    if (messages !== []) {
+      debugger;
+      dataIndex = messages.map(message => {
+        debugger;
+        return (
+          <div key={message.id}>
+            <Chart message={message.data.message} />
+          </div>
+        )
+      })
     }
-    debugger;
+
     return (
       <div>
-        <Chart listNameFromParent={dataIndex} />
+        {dataIndex}
       </div>
     )
   }

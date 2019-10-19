@@ -1,40 +1,33 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {Doughnut} from 'react-chartjs-2'
 
-let dataFromMyParent = this.props.listNameFromParent
-debugger;
-const data = {
-	labels: [
-		'Red',
-		'Green',
-		'Yellow',
-		dataFromMyParent,
-	],
-	datasets: [{
-		data: [300, 50, 100],
-		backgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		],
-		hoverBackgroundColor: [
-		'#FF6384',
-		'#36A2EB',
-		'#FFCE56'
-		]
-	}]
-};
+const Chart = (props) => {
+	debugger;
+	let message = props.message
 
-class Chart extends Component {
+	const data = {
+		labels: [ message ],
+		datasets: [{
+			data: [300, 50, 100],
+			backgroundColor: [
+			'#FF6384',
+			'#36A2EB',
+			'#FFCE56'
+			],
+			hoverBackgroundColor: [
+			'#FF6384',
+			'#36A2EB',
+			'#FFCE56'
+			]
+		}]
+	}
 
-  render() {
     return (
       <div>
         <h2>Doughnut Example</h2>
         <Doughnut data={data} />
       </div>
-    );
-  }
-};
+    )
+}
 
 export default Chart
