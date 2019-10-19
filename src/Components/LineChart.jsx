@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2'; //import Line module from react-chart-js
 
 const LineChart = (props) => {
   debugger;
-  const getLabels = (collection) => {
+  var getLabels = (collection) => {
     let labels = []
     collection.forEach(entry => {
       if (entry.data.message && labels.indexOf(entry.data.message) === -1) {
