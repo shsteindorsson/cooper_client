@@ -28,12 +28,13 @@ const mydata = {
     ]
 }
 
-export default function TestComponent() {
+const LineChart = () => {
     return (
       <div>
       <h2>Line Chart Example</h2>
       <Line data={mydata} />
       </div>
     );
-    
 }
+
+export default LineChart
