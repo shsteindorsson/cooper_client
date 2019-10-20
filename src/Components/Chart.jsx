@@ -82,9 +82,6 @@ const Chart = (props) => {
 			<Header size='large' textAlign='center'>My Cooper Data Results</Header>
 			<Doughnut
 				data={data}
-				width={100}
-				height={90}
-				options={{ maintainAspectRatio: false }}
 			/>
 		</div>
 	)

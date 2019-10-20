@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+/* .ui.raised.very.padded.text.container.segment {
+
+} */
+
 .app-container {
   background: rgba(255, 255, 255, 0.7);
   margin: 1rem 2rem 1rem 2rem;
