@@ -126,8 +126,6 @@ class App extends Component {
           />
           {performanceDataIndex}
         </div>
-        <div className="spacious">
-        </div>
         <Footer />
       </div>
     );

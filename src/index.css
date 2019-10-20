@@ -11,20 +11,8 @@ p {
   text-align: center;
 }
 
-/* .ui.raised.very.padded.text.container.segment {
-
-} */
-
-.app-container {
-  background: rgba(255, 255, 255, 0.7);
-  margin: 1rem 2rem 1rem 2rem;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.spacious {
-  margin-top: 3rem;
+.ui.raised.very.padded.text.container.segment {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 /* InputFields */
@@ -33,7 +21,6 @@ select {
   position: relative; 
   left: 50%;
   transform: translateX(-50%);
-  margin: 10px;
   width: 150px;
   padding: 5px 35px 5px 5px;
   font-size: 16px;
@@ -102,7 +89,7 @@ button {
   min-height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: linear-gradient( 135deg, #97ABFF 10%, #123597 100%);
+  background-image: linear-gradient( 135deg, #F97794 10%, #623AA2 100%);
 }
 
 footer {
