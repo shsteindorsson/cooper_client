@@ -26,6 +26,10 @@ This repository contains our solution to the client side of the Cooper Challenge
 ### Setup   
 To test this application you need to fork it to your own GitHub account and clone it to your local workspace.  
 
+To install all of the dependencies:    
+```
+$ yarn install
+```  
 To run the unit tests:  
 ```
 $ yarn test
@@ -43,7 +47,7 @@ $ yarn start
 
 ## Updates/Improvements  
 When time given, we would love to:  
-- Finish implementing the BMI calculator and add the save data functionality to it as well.  
+- Finish implementing the BMI calculator on the client side and add the save data functionality to it.  
 
 ## License  
 This project is under the [MIT-license](https://en.wikipedia.org/wiki/MIT_License).
