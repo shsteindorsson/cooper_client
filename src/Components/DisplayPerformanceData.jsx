@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { getData } from '../Modules/PerformanceData'
 import Chart from './Chart'
 
+
 class DisplayPerformanceData extends Component {
   constructor(props) {
     super(props)

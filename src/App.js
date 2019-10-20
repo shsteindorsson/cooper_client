@@ -109,7 +109,7 @@ class App extends Component {
 
     return (
       <div>
-        <div className="app-container">
+        <div className="ui raised very padded text container segment">
           <h1>Cooper Calculator</h1>
           {renderLogin}
           <InputFields
