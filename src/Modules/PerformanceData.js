@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { storeAuthCredentials } from './Auth'
 
-const apiUrl = 'http://localhost:3000/api/v1'
+const apiUrl = 'http://clarissa-sverrir-cooper.herokuapp.com/'
 
 const saveData = async (result) => {
   let headers = await sessionStorage.getItem("credentials")
