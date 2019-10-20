@@ -13,6 +13,7 @@ p {
 
 .ui.raised.very.padded.text.container.segment {
   background: rgba(255, 255, 255, 0.5);
+  margin-top: 1rem;
 }
 
 /* InputFields */
