@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Icon } from 'semantic-ui-react'
+import { Header, Button, Icon } from 'semantic-ui-react'
 import DisplayCooperResult from './Components/DisplayCooperResult'
 import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
@@ -110,7 +110,7 @@ class App extends Component {
     return (
       <div>
         <div className="ui raised very padded text container segment">
-          <h1>Cooper Calculator</h1>
+        <Header size='large' textAlign='center'>The Cooper Calculator</Header>
           {renderLogin}
           <InputFields
             inputChangeHandler={this.onChange.bind(this)}
