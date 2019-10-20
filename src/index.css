@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+h1, 
+p {
+  text-align: center;
+}
+
 /* .ui.raised.very.padded.text.container.segment {
 
 } */
@@ -22,18 +27,13 @@
   margin-top: 3rem;
 }
 
-.label-padding {
-  margin-top: 0.5rem;
-}
-
-label {
-  padding-right: 0.5rem;
-}
-
 /* InputFields */
 
 select {
-  margin: 50px;
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px;
   width: 150px;
   padding: 5px 35px 5px 5px;
   font-size: 16px;
@@ -43,6 +43,23 @@ select {
   -moz-appearance: none;
   appearance: none;
   background: url(https://www.favicon.cc/logo3d/474207.png) 96% / 15% no-repeat #fff;
+}
+
+.ui.input {
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.label-padding {
+  margin-top: 0.5rem;
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+label {
+  padding-right: 0.5rem;
 }
 
 .ui.fluid.placeholder {
@@ -66,6 +83,12 @@ select {
 
 #submit {
   margin-bottom: 1rem;
+}
+
+button {
+  position: relative; 
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* chart */
