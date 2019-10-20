@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CooperCalculator from '../Modules/CooperCalculator'
 import { saveData } from '../Modules/PerformanceData'
+import { Placeholder } from 'semantic-ui-react'
 
 class DisplayCooperResult extends Component {
 
@@ -49,7 +50,9 @@ class DisplayCooperResult extends Component {
     }
     return (
       <div>
-        {results}
+        <Placeholder fluid>
+          {results}
+        </Placeholder>
       </div>
     )
   }
