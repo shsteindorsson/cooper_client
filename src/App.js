@@ -110,21 +110,21 @@ class App extends Component {
     return (
       <div>
         <div className="app-container">
-        <h1>Cooper Calculator</h1>
-        <InputFields
-          inputChangeHandler={this.onChange.bind(this)}
-        />
+          <h1>Cooper Calculator</h1>
+          <InputFields
+            inputChangeHandler={this.onChange.bind(this)}
+          />
 
-        <DisplayCooperResult
-          distance={this.state.distance}
-          gender={this.state.gender}
-          age={this.state.age}
-          authenticated={this.state.authenticated}
-          entrySaved={this.state.entrySaved}
-          entryHandler={this.entryHandler.bind(this)}
-        />
-        {performanceDataIndex}
-        {renderLogin}
+          <DisplayCooperResult
+            distance={this.state.distance}
+            gender={this.state.gender}
+            age={this.state.age}
+            authenticated={this.state.authenticated}
+            entrySaved={this.state.entrySaved}
+            entryHandler={this.entryHandler.bind(this)}
+          />
+          {performanceDataIndex}
+          {renderLogin}
         </div>
         <div className="spacious">
         </div>

@@ -1,10 +1,5 @@
 import React from 'react'
-import { Select, Input } from 'semantic-ui-react'
-
-const description = [
-  'This is a simple fitness tracking application.',
-  'The Cooper Test (aka The 12-minute run) is an easy way to measure aerobic fitness.',
-].join(' ')
+import { Input } from 'semantic-ui-react'
 
 const InputFields = (props) => {
   return (

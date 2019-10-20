@@ -1,4 +1,11 @@
 /* App */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .app-container {
   background: rgba(255, 255, 255, 0.7);
   margin: 1rem 2rem 1rem 2rem;
@@ -37,6 +44,15 @@ select {
 .ui.fluid.placeholder {
   border-radius: 10px;
   margin: 0.5rem 0 0.5rem 0;
+}
+
+.login-form-div {
+  position: relative;
+  left: 30% !important;
+}
+
+.six.wide.field {
+  padding-left: 5rem important!;
 }
 
 /* Keep footer in place */
