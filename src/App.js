@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'semantic-ui-react'
+import { Button, Icon } from 'semantic-ui-react'
 import DisplayCooperResult from './Components/DisplayCooperResult'
 import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
@@ -53,13 +53,13 @@ class App extends Component {
     if (this.state.authenticated === true) {
       user = JSON.parse(sessionStorage.getItem('credentials')).uid
       renderLogin = (
-        <p>Hi {user}</p>
+        <p className="hi-user"><Icon name="user outline"/>Hi {user}</p>
       )
       performanceDataIndex = (
-        <button id="show-index"
+        <Button color='vk' type='submit' id="show-index"
           onClick={() => this.setState({ renderIndex: true })}>
           Show past entries
-        </button>
+        </Button>
       )
 
       if (this.state.renderIndex === true) {
@@ -69,18 +69,18 @@ class App extends Component {
               updateIndex={this.state.updateIndex}
               indexUpdated={this.indexUpdated.bind(this)}
             />
-            <button
+            <Button color='vk' type='submit'
               onClick={() => this.setState({ renderIndex: false })}>
               Hide past entries
-            </button>
+            </Button>
           </>
         )
       } else {
         performanceDataIndex = (
-          <button id="show-index"
+          <Button color='vk' type='submit' id="show-index"
             onClick={() => this.setState({ renderIndex: true })}>
             Show past entries
-          </button>
+          </Button>
         )
       }
     } else {
@@ -111,6 +111,7 @@ class App extends Component {
       <div>
         <div className="app-container">
           <h1>Cooper Calculator</h1>
+          {renderLogin}
           <InputFields
             inputChangeHandler={this.onChange.bind(this)}
           />
@@ -124,7 +125,6 @@ class App extends Component {
             entryHandler={this.entryHandler.bind(this)}
           />
           {performanceDataIndex}
-          {renderLogin}
         </div>
         <div className="spacious">
         </div>

@@ -48,12 +48,23 @@ select {
 
 .login-form-div {
   position: relative;
-  left: 30% !important;
+  left: 25% !important;
 }
 
 .six.wide.field {
   padding-left: 5rem important!;
 }
+
+.hi-user {
+  margin-top: 0.5rem;
+  font-weight: 700;
+}
+
+#submit {
+  margin-bottom: 1rem;
+}
+
+/* Results DIV Cooper */
 
 /* Keep footer in place */
 #main-container {
