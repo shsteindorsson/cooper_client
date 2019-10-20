@@ -64,7 +64,11 @@ select {
   margin-bottom: 1rem;
 }
 
-/* Results DIV Cooper */
+/* chart */
+
+#hide-button {
+  margin-top: 1rem;
+}
 
 /* Keep footer in place */
 #main-container {

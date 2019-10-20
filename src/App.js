@@ -69,7 +69,7 @@ class App extends Component {
               updateIndex={this.state.updateIndex}
               indexUpdated={this.indexUpdated.bind(this)}
             />
-            <Button color='vk' type='submit'
+            <Button color='vk' id='hide-button' type='submit'
               onClick={() => this.setState({ renderIndex: false })}>
               Hide past entries
             </Button>
