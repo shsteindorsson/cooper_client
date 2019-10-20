@@ -1,4 +1,5 @@
 import React from 'react'
+import { Input } from 'semantic-ui-react'
 
 const description = [
   'This is a simple fitness tracking application.',
@@ -14,12 +15,20 @@ const InputFields = (props) => {
           <option value="male">Male</option>
         </select>
         <div className="label-padding">
-          <label>Distance</label>
-          <input id="distance" onChange={props.inputChangeHandler}></input>
+          <Input
+            label={{ basic: true, content: 'Years' }}
+            labelPosition='right'
+            placeholder='Enter your age...'
+            id="age" onChange={props.inputChangeHandler}
+          />
         </div>
-        <div>
-          <label>Age</label>
-          <input id="age" onChange={props.inputChangeHandler}></input>
+        <div className="label-padding">
+          <Input
+            label={{ basic: true, content: 'Meters' }}
+            labelPosition='right'
+            placeholder='Enter your distance...'
+            id="distance" onChange={props.inputChangeHandler}
+          />
         </div>
       </div>
     </>

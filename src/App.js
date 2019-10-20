@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
-import { Container } from 'semantic-ui-react'
 import DisplayCooperResult from './Components/DisplayCooperResult'
 import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
 import { authenticate } from './Modules/Auth'
 import DisplayPerformanceData from './Components/DisplayPerformanceData'
-import BMICalculator from './Components/BMICalculator'
 import Footer from './Components/Footer'
 
 class App extends Component {
@@ -128,7 +126,6 @@ class App extends Component {
         {renderLogin}
         </div>
         <div className="spacious">
-        <BMICalculator />
         </div>
         <Footer />
       </div>
