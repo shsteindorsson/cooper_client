@@ -21,6 +21,20 @@ label {
 
 /* InputFields */
 
+select {
+  margin: 50px;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://www.favicon.cc/logo3d/474207.png) 96% / 15% no-repeat #fff;
+}
+
+
 
 /* Keep footer in place */
 #main-container {

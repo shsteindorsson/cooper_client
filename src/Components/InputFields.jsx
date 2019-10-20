@@ -1,5 +1,5 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Select, Input } from 'semantic-ui-react'
 
 const description = [
   'This is a simple fitness tracking application.',
