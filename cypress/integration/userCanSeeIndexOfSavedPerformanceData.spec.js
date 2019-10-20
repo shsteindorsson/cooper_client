@@ -29,4 +29,9 @@ describe('User attempts to view his/her performance data', () => {
     cy.get('.ui.large.header')
     cy.should('contain', 'My Cooper Data Results')
   })
+
+  it('shows bar chart', () => {
+    cy.get('.chartjs-render-monitor')
+      .should('be.visible')
+  })
 })

@@ -62,14 +62,12 @@ In this project the calculation is performed on the client-side.
 ### What are the pros and cons of client-side processing/calculation ?
 
 #### Pros
-- It can, under some circumstances, mean more processing power
-- It makes scaling easier because computational load is not increased with each new user
-  - Only increases storage but does not increase computational load on server
-  - Hence, less server-cost
+- It can, under some circumstances, mean more processing power.
+- It makes scaling easier because computational load is not increased with each new user.  
+Only increases storage but does not increase computational load on server. Hence, less server-cost.
 
 #### Cons
-- Client-side resources can be more of an issue
-  - F.ex. hardware capabilities and software compatibility on client-side
-- Software (calculations) can not be written in any language or framework without it affecting the client-side
-- With server-side computation, more of the debugging is focused on a single target rather than, possibly, multiple client-side scenarios
-- Security, some processing should never be done client-side (banking f.ex.)
+- Security, some processing should never be done client-side (banking f.ex.).
+- Client-side resources can be more of an issue, f.ex. hardware capabilities and software compatibility on client-side.
+- Software (calculations) can not be written in any language or framework without it affecting the client-side.
+- With server-side computation, more of the debugging is focused on a single target rather than, possibly, multiple client-side scenarios.
