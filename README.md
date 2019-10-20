@@ -1,4 +1,4 @@
-# BMI Challenge revisited
+# The Cooper Challenge
 ### Author  
 [Clarissa Liljander](https://github.com/clalil)  
 [Sverrir Steindorsson](https://github.com/shsteindorsson)
