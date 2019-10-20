@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Button } from 'semantic-ui-react'
 import DisplayCooperResult from './Components/DisplayCooperResult'
 import InputFields from './Components/InputFields'
 import LoginForm from './Components/LoginForm'
@@ -95,10 +96,10 @@ class App extends Component {
       } else {
         renderLogin = (
           <>
-            <button id="login"
+            <Button color='vk' type='submit' id="login"
               onClick={() => this.setState({ renderLoginForm: true })}>
               Login
-            </button>
+            </Button>
 
             <p>{this.state.message}</p>
           </>
