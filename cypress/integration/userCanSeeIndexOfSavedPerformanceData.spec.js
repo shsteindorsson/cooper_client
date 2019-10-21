@@ -30,7 +30,7 @@ describe('User attempts to view his/her performance data', () => {
     cy.should('contain', 'My Cooper Data Results')
   })
 
-  it('shows bar chart', () => {
+  it('shows doughnut chart', () => {
     cy.get('.chartjs-render-monitor')
       .should('be.visible')
   })
