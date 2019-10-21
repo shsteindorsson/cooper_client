@@ -9,7 +9,7 @@ import Footer from './Components/Footer'
 
 class App extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       distance: '',
       gender: 'female',

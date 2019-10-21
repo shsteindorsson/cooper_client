@@ -16,7 +16,7 @@ describe('User attempts to view his/her performance data', () => {
         "uid": "user@mail.com"
       }
     })
-    cy.get('#login').click();
+    cy.get('#login').click()
     cy.get('#login-form').within(() => {
       cy.get('#email').type('user@mail.com')
       cy.get('#password').type('password')

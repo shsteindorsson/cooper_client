@@ -1,7 +1,7 @@
 describe('User can log in', () => {
   it('successfully', () => {
-    cy.visit('http://localhost:3001');
-    cy.server();
+    cy.visit('http://localhost:3001')
+    cy.server()
     cy.route({
       method: 'POST',
       url: 'https://clarissa-sverrir-cooper.herokuapp.com/api/v1/auth/sign_in',
@@ -20,7 +20,7 @@ describe('User can log in', () => {
   })
 
   it('with invalid credentials', () => {
-    cy.visit('http://localhost:3001');
+    cy.visit('http://localhost:3001')
     cy.server();
     cy.route({
       method: 'POST',
@@ -33,7 +33,7 @@ describe('User can log in', () => {
         "success": false
       }     
     })
-    cy.get('#login').click();
+    cy.get('#login').click()
     cy.get('#login-form').within(() => {
       cy.get('#email').type('user@mail.com')
       cy.get('#password').type('wrongpassword')
