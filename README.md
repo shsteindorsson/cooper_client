@@ -9,6 +9,7 @@
 **Deployed at:** [Netlify](https://cooper-clarissa-sverrir.netlify.com/) [![Netlify Status](https://api.netlify.com/api/v1/badges/1746feec-8243-480e-8a58-1bbc5c106f26/deploy-status)](https://app.netlify.com/sites/cooper-clarissa-sverrir/deploys)  and [Heroku](https://www.heroku.com/).
 
 <img src="./src/img/readme.png" alt="Image of app" width="40%">
+<img src="./src/img/readme2.png" alt="Image of app" width="40%">
 
 ## The code   
 This repository contains our solution to the client side of the Cooper Challenge. Our respective repositories for the Cooper API built in Rails can be found [here](https://github.com/clalil/Cooper-Challenge-API) and [here](https://github.com/shsteindorsson/cooper_api).
