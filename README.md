@@ -45,7 +45,11 @@ To start the application and run it on your local host:
 $ yarn start
 ```
 
-### Exploring the app online or in local host [WIP]  
+### Exploring the app online or in local host  
+To be able to fully appreciate the software, one can log into the app with the following test-credentials:  
+
+**Email:** `user@mail.com`  
+**Password:** `password`
 
 ## Updates/Improvements  
 Later on, we would like to:  
@@ -70,5 +74,5 @@ Only increases storage but does not increase computational load on server. Hence
 #### Cons
 - Security, some processing should never be done client-side (banking f.ex.).
 - Client-side resources can be more of an issue, f.ex. hardware capabilities and software compatibility on client-side.
-- Software (calculations) can not be written in any language or framework without it affecting the client-side.
+- Software (calculations) can not be written in any language or framework.
 - With server-side computation, more of the debugging is focused on a single target rather than, possibly, multiple client-side scenarios.
